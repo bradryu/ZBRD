@@ -1,0 +1,299 @@
+*************************************************************************
+* 이 프로그램은 저작권 법에 따라 보호받는 BR Developer Group의 지적 재산으로서,
+* 무단 사용, 무단 복제하는 행위는 금지되어 있으며 법적제재를 받을 수 있습니다.
+* 한국 저작권 위원회 등록번호 : C-2018-000076
+* Copyright 2018 BR Developer Group All right reserved.
+* http://www.brdev.co.kr:8080/flp
+* bradryu@hotmail.com
+*************************************************************************
+*&---------------------------------------------------------------------*
+*&  INCLUDE           ZLBRD00120TOP
+*&---------------------------------------------------------------------*
+
+TABLES : ztbrd00120.
+
+*&---------------------------------------------------------------------*
+*&  CONSTANTS
+*&---------------------------------------------------------------------*
+CONSTANTS: BEGIN OF c_field_balv,
+             uname           TYPE fieldname VALUE 'UNAME',
+             g_define        TYPE fieldname VALUE 'G_DEFINE',
+             l_define        TYPE fieldname VALUE 'L_DEFINE',
+             g_type          TYPE fieldname VALUE 'G_TYPE',
+             l_type          TYPE fieldname VALUE 'L_TYPE',
+             g_t_type        TYPE fieldname VALUE 'G_T_TYPE',
+             l_t_type        TYPE fieldname VALUE 'L_T_TYPE',
+             g_constants     TYPE fieldname VALUE 'G_CONSTANTS',
+             l_constants     TYPE fieldname VALUE 'L_CONSTANTS',
+             g_fieldsymbol   TYPE fieldname VALUE 'G_FIELDSYMBOL',
+             l_fieldsymbol   TYPE fieldname VALUE 'L_FIELDSYMBOL',
+             g_fieldsymbol_v TYPE fieldname VALUE 'G_FIELDSYMBOL_V',
+             l_fieldsymbol_v TYPE fieldname VALUE 'L_FIELDSYMBOL_V',
+             g_fieldsymbol_s TYPE fieldname VALUE 'G_FIELDSYMBOL_S',
+             l_fieldsymbol_s TYPE fieldname VALUE 'L_FIELDSYMBOL_S',
+             g_fieldsymbol_t TYPE fieldname VALUE 'G_FIELDSYMBOL_T',
+             l_fieldsymbol_t TYPE fieldname VALUE 'L_FIELDSYMBOL_T',
+             g_fieldsymbol_o TYPE fieldname VALUE 'G_FIELDSYMBOL_O',
+             l_fieldsymbol_o TYPE fieldname VALUE 'L_FIELDSYMBOL_O',
+             parameters      TYPE fieldname VALUE 'PARAMETERS',
+             selectoption    TYPE fieldname VALUE 'SELECTOPTION',
+             g_data          TYPE fieldname VALUE 'G_DATA',
+             l_data          TYPE fieldname VALUE 'L_DATA',
+             g_itab          TYPE fieldname VALUE 'G_ITAB',
+             l_itab          TYPE fieldname VALUE 'L_ITAB',
+             g_obj           TYPE fieldname VALUE 'G_OBJ',
+             l_obj           TYPE fieldname VALUE 'L_OBJ',
+             g_wa            TYPE fieldname VALUE 'G_WA',
+             l_wa            TYPE fieldname VALUE 'L_WA',
+             form_iv         TYPE fieldname VALUE 'FORM_IV',
+             form_is         TYPE fieldname VALUE 'FORM_IS',
+             form_it         TYPE fieldname VALUE 'FORM_IT',
+             form_io         TYPE fieldname VALUE 'FORM_IO',
+             form_cv         TYPE fieldname VALUE 'FORM_CV',
+             form_cs         TYPE fieldname VALUE 'FORM_CS',
+             form_ct         TYPE fieldname VALUE 'FORM_CT',
+             form_tt         TYPE fieldname VALUE 'FORM_TT',
+             ernam           TYPE fieldname VALUE 'ERNAM',
+             erdat           TYPE fieldname VALUE 'ERDAT',
+             erzet           TYPE fieldname VALUE 'ERZET',
+             aenam           TYPE fieldname VALUE 'AENAM',
+             aedat           TYPE fieldname VALUE 'AEDAT',
+             aezet           TYPE fieldname VALUE 'AEZET',
+             mandt           TYPE fieldname VALUE 'MANDT',
+             zdel            TYPE fieldname VALUE 'ZDEL',
+           END OF c_field_balv.
+*&---------------------------------------------------------------------*
+*&  DATA
+*&---------------------------------------------------------------------*
+DATA : go_balv           TYPE REF TO zcl_brd_alv_n,
+       go_container_balv TYPE REF TO cl_gui_container.
+TYPES : BEGIN OF gty_balv,
+          balv_status_icon TYPE icon-id,
+          uname            TYPE ztbrd00120-uname,
+          g_define         TYPE ztbrd00120-g_define,
+          l_define         TYPE ztbrd00120-l_define,
+          g_type           TYPE ztbrd00120-g_type,
+          l_type           TYPE ztbrd00120-l_type,
+          g_t_type         TYPE ztbrd00120-g_t_type,
+          l_t_type         TYPE ztbrd00120-l_t_type,
+          g_constants      TYPE ztbrd00120-g_constants,
+          l_constants      TYPE ztbrd00120-l_constants,
+          g_fieldsymbol    TYPE ztbrd00120-g_fieldsymbol,
+          l_fieldsymbol    TYPE ztbrd00120-l_fieldsymbol,
+          g_fieldsymbol_v  TYPE ztbrd00120-g_fieldsymbol_v,
+          l_fieldsymbol_v  TYPE ztbrd00120-l_fieldsymbol_v,
+          g_fieldsymbol_s  TYPE ztbrd00120-g_fieldsymbol_s,
+          l_fieldsymbol_s  TYPE ztbrd00120-l_fieldsymbol_s,
+          g_fieldsymbol_t  TYPE ztbrd00120-g_fieldsymbol_t,
+          l_fieldsymbol_t  TYPE ztbrd00120-l_fieldsymbol_t,
+          g_fieldsymbol_o  TYPE ztbrd00120-g_fieldsymbol_o,
+          l_fieldsymbol_o  TYPE ztbrd00120-l_fieldsymbol_o,
+          parameters       TYPE ztbrd00120-parameters,
+          selectoption     TYPE ztbrd00120-selectoption,
+          g_data           TYPE ztbrd00120-g_data,
+          l_data           TYPE ztbrd00120-l_data,
+          g_itab           TYPE ztbrd00120-g_itab,
+          l_itab           TYPE ztbrd00120-l_itab,
+          g_obj            TYPE ztbrd00120-g_obj,
+          l_obj            TYPE ztbrd00120-l_obj,
+          g_wa             TYPE ztbrd00120-g_wa,
+          l_wa             TYPE ztbrd00120-l_wa,
+          form_iv          TYPE ztbrd00120-form_iv,
+          form_is          TYPE ztbrd00120-form_is,
+          form_it          TYPE ztbrd00120-form_it,
+          form_io          TYPE ztbrd00120-form_io,
+          form_cv          TYPE ztbrd00120-form_cv,
+          form_cs          TYPE ztbrd00120-form_cs,
+          form_ct          TYPE ztbrd00120-form_ct,
+          form_tt          TYPE ztbrd00120-form_tt,
+          ernam            TYPE ztbrd00120-ernam,
+          erdat            TYPE ztbrd00120-erdat,
+          erzet            TYPE ztbrd00120-erzet,
+          aenam            TYPE ztbrd00120-aenam,
+          aedat            TYPE ztbrd00120-aedat,
+          aezet            TYPE ztbrd00120-aezet,
+          mandt            TYPE ztbrd00120-mandt,
+          zdel             TYPE ztbrd00120-zdel,
+        END OF gty_balv.
+DATA : BEGIN OF gs_balv.
+         .INCLUDE TYPE gty_balv.
+         DATA : celltab   TYPE lvc_t_styl,
+         coltab    TYPE lvc_t_scol,
+         rcolor(4), "c_alv_yellow, blue, green, red
+       END OF gs_balv,
+       gt_balv      LIKE TABLE OF gs_balv WITH HEADER LINE,
+       gt_balv_buff LIKE TABLE OF gs_balv.
+FIELD-SYMBOLS <gs_balv> LIKE gs_balv.
+*&---------------------------------------------------------------------*
+*&  SELECTION SCREEN
+*&---------------------------------------------------------------------*
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE text009.
+SELECTION-SCREEN BEGIN OF LINE.
+SELECTION-SCREEN COMMENT (20) text010 MODIF ID dp.
+SELECT-OPTIONS so_uname FOR ztbrd00120-uname MODIF ID dp.
+SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT011 MODIF ID DP.
+*SELECT-OPTIONS SO_G_DEF FOR ZTBRD00120-G_DEFINE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT012 MODIF ID DP.
+*SELECT-OPTIONS SO_L_DEF FOR ZTBRD00120-L_DEFINE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT013 MODIF ID DP.
+*SELECT-OPTIONS SO_G_TYP FOR ZTBRD00120-G_TYPE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT014 MODIF ID DP.
+*SELECT-OPTIONS SO_L_TYP FOR ZTBRD00120-L_TYPE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT015 MODIF ID DP.
+*SELECT-OPTIONS SO_G_T_T FOR ZTBRD00120-G_T_TYPE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT016 MODIF ID DP.
+*SELECT-OPTIONS SO_L_T_T FOR ZTBRD00120-L_T_TYPE MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT017 MODIF ID DP.
+*SELECT-OPTIONS SO_G_CON FOR ZTBRD00120-G_CONSTANTS MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT018 MODIF ID DP.
+*SELECT-OPTIONS SO_L_CON FOR ZTBRD00120-L_CONSTANTS MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT019 MODIF ID DP.
+*SELECT-OPTIONS SO_G_FIL FOR ZTBRD00120-G_FIELDSYMBOL MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT020 MODIF ID DP.
+*SELECT-OPTIONS SO_L_FIL FOR ZTBRD00120-L_FIELDSYMBOL MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT021 MODIF ID DP.
+*SELECT-OPTIONS SO_G_F21 FOR ZTBRD00120-G_FIELDSYMBOL_V MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT022 MODIF ID DP.
+*SELECT-OPTIONS SO_L_F22 FOR ZTBRD00120-L_FIELDSYMBOL_V MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT023 MODIF ID DP.
+*SELECT-OPTIONS SO_G_F23 FOR ZTBRD00120-G_FIELDSYMBOL_S MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT024 MODIF ID DP.
+*SELECT-OPTIONS SO_L_F24 FOR ZTBRD00120-L_FIELDSYMBOL_S MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT025 MODIF ID DP.
+*SELECT-OPTIONS SO_G_F25 FOR ZTBRD00120-G_FIELDSYMBOL_T MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT026 MODIF ID DP.
+*SELECT-OPTIONS SO_L_F26 FOR ZTBRD00120-L_FIELDSYMBOL_T MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT027 MODIF ID DP.
+*SELECT-OPTIONS SO_G_F27 FOR ZTBRD00120-G_FIELDSYMBOL_O MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT028 MODIF ID DP.
+*SELECT-OPTIONS SO_L_F28 FOR ZTBRD00120-L_FIELDSYMBOL_O MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT029 MODIF ID DP.
+*SELECT-OPTIONS SO_PARAM FOR ZTBRD00120-PARAMETERS MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT030 MODIF ID DP.
+*SELECT-OPTIONS SO_SELEC FOR ZTBRD00120-SELECTOPTION MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT031 MODIF ID DP.
+*SELECT-OPTIONS SO_G_DAT FOR ZTBRD00120-G_DATA MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT032 MODIF ID DP.
+*SELECT-OPTIONS SO_L_DAT FOR ZTBRD00120-L_DATA MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT033 MODIF ID DP.
+*SELECT-OPTIONS SO_G_ITA FOR ZTBRD00120-G_ITAB MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT034 MODIF ID DP.
+*SELECT-OPTIONS SO_L_ITA FOR ZTBRD00120-L_ITAB MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT035 MODIF ID DP.
+*SELECT-OPTIONS SO_G_OBJ FOR ZTBRD00120-G_OBJ MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT036 MODIF ID DP.
+*SELECT-OPTIONS SO_L_OBJ FOR ZTBRD00120-L_OBJ MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT037 MODIF ID DP.
+*SELECT-OPTIONS SO_G_WA FOR ZTBRD00120-G_WA MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT038 MODIF ID DP.
+*SELECT-OPTIONS SO_L_WA FOR ZTBRD00120-L_WA MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT039 MODIF ID DP.
+*SELECT-OPTIONS SO_FORM_ FOR ZTBRD00120-FORM_IV MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT040 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR40 FOR ZTBRD00120-FORM_IS MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT041 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR41 FOR ZTBRD00120-FORM_IT MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT042 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR42 FOR ZTBRD00120-FORM_CV MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT043 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR43 FOR ZTBRD00120-FORM_CS MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT044 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR44 FOR ZTBRD00120-FORM_CT MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT045 MODIF ID DP.
+*SELECT-OPTIONS SO_FOR45 FOR ZTBRD00120-FORM_TT MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT046 MODIF ID DP.
+*SELECT-OPTIONS SO_ERNAM FOR ZTBRD00120-ERNAM MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT047 MODIF ID DP.
+*SELECT-OPTIONS SO_ERDAT FOR ZTBRD00120-ERDAT MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT048 MODIF ID DP.
+*SELECT-OPTIONS SO_ERZET FOR ZTBRD00120-ERZET MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT049 MODIF ID DP.
+*SELECT-OPTIONS SO_AENAM FOR ZTBRD00120-AENAM MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT050 MODIF ID DP.
+*SELECT-OPTIONS SO_AEDAT FOR ZTBRD00120-AEDAT MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+*SELECTION-SCREEN BEGIN OF LINE.
+*SELECTION-SCREEN COMMENT (20) TEXT051 MODIF ID DP.
+*SELECT-OPTIONS SO_AEZET FOR ZTBRD00120-AEZET MODIF ID DP.
+*SELECTION-SCREEN END OF LINE.
+SELECTION-SCREEN END OF BLOCK b1.

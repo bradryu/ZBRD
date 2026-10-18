@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_BRD_ACG_JOIN</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>BALV ACG Join</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>MS_NAME</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ACG Naming Convension</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_ACG_CONFIG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>BALV ACG Param</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_ACG_CONFIG_JOIN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>BALV ACG Param</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IS_ALV_CONFIG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>BALV Config Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IT_ALV_FCAT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>BALV Config Item</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IT_KEY_MAP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key Map</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_100_ATTR</CMPNAME>
+     <SCONAME>ET_CONTAINER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Screen: Container Attributes (External Representation)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_100_ATTR</CMPNAME>
+     <SCONAME>ET_FIELDS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Screen: Single fields for a container (external represent.)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
