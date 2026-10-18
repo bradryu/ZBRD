@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>BALV ACG Function Group</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZBRD0002F01</SOBJ_NAME>
+    <SOBJ_NAME>LZBRD0002TOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZBRD0002</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_DOUBLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Double ACG(Header-Item)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_H_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ALV_I_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_HEADER</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_ITEM</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <TYP>ZYBRD00110</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_H_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_I_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_H_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ALV_I_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_ITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Key Map</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_H_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_I_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_DOUBLE_SIMPLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Double ACG(Simple)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_L_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ALV_R_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_LEFT</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_RIGHT</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <TYP>ZYBRD00110</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_L_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_R_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_L_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ALV_R_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_LEFT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_RIGHT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Key Map</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_L_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_R_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_JOIN</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Join ACG</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_JOIN</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <TYP>ZYBRD00110</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_JOIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Key Map</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_MULTI</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Multi ACG</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_TAB_LIST</PARAMETER>
+       <TYP>ZYBRD00120</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_CONFIG</PARAMETER>
+       <TYP>ZYBRD00010</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TAB_LIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Multi ALV</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_SINGLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Single ACG</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_TREE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Tree ACG</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <TYP>ZTBRD00011</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00021</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_TREE_DOUBLE</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Tree Double ACG(Header-Item)</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_I_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_H_CONFIG</PARAMETER>
+       <TYP>ZTBRD00011</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_HEADER</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_ITEM</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <TYP>ZYBRD00110</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_I_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_H_FCAT</PARAMETER>
+       <TYP>ZYBRD00021</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_I_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_H_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_ITEM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_KEY_MAP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Key Map</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_I_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_H_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>ZBRD_GET_SRC_TREE_GRID</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Tree Grid ACG</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <TYP>ZTBRD00010</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_TALV_CONFIG</PARAMETER>
+       <TYP>ZTBRD00011</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_GRID</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_ACG_CONFIG_TREE</PARAMETER>
+       <TYP>ZSBRD00140</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <TYP>DYFATC_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <TYP>DYCATT_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>T_TOP</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_F01</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_100</PARAMETER>
+       <TYP>ZYBRD00100</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00020</TYP>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>T_TALV_FCAT</PARAMETER>
+       <TYP>ZYBRD00021</TYP>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>LICENSE_EXPIRED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_ALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_TALV_CONFIG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Header</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_GRID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_ACG_CONFIG_TREE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV ACG Param</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_FIELDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Single fields for a container (external represent.)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Screen: Container Attributes (External Representation)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TOP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_MAIN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_F01</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_100</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Source Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_ALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>T_TALV_FCAT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BALV Tree Config Item</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LICENSE_EXPIRED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>license_expired</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
